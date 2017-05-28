@@ -97,7 +97,7 @@ if [ "$action" == 'create' ]
 
 			location ~ \.php$ {
 				fastcgi_split_path_info ^(.+\.php)(/.+)\$;
-				fastcgi_pass 127.0.0.1:9000;
+				fastcgi_pass unix:/var/run/php/php7.1-fpm.sock;
 				fastcgi_index index.php;
 				include fastcgi_params;
 			}
